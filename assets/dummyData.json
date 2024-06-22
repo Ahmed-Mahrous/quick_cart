@@ -1,0 +1,73 @@
+{
+  "bestSelling": [
+    {
+      "id": 1,
+      "name": "Stitch Keychain",
+      "price": "EGP 55",
+      "image": "assets/images/stitch.jpg",
+      "sellerImage": "assets/images/yarana.png"
+    },
+    {
+      "id": 2,
+      "name": "Baby Girl Dress",
+      "price": "EGP 230",
+      "image": "assets/images/baby_girl.jpg",
+      "sellerImage": "assets/images/help.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Infant Hair Clips",
+      "price": "EGP 90",
+      "image": "assets/images/infant_hair.jpg",
+      "sellerImage": "assets/images/seller.jpg"
+    }
+
+  ],
+  "newArrival": [
+    {
+      "id": 1,
+      "name": "Printed Bag",
+      "price": "EGP 180",
+      "image": "assets/images/printed_bag.jpg",
+      "sellerImage": "assets/images/seller.jpg"
+    },
+    {
+      "id": 2,
+      "name": "NoteBook",
+      "price": "EGP 80",
+      "image": "assets/images/notebook.png",
+      "sellerImage": "assets/images/yarana.png"
+    },
+    {
+      "id": 3,
+      "name": "Woolen Scarf",
+      "price": "EGP 95 ",
+      "image": "assets/images/woolen_scarf.jpg",
+      "sellerImage": "assets/images/help.jpg"
+    }
+
+  ],
+  "recommendedForYou": [
+    {
+      "id": 1,
+      "name": "Leather Jacket",
+      "price": "EGP 340",
+      "image": "assets/images/leather_jacket.jpg",
+      "sellerImage": "assets/images/seller.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Dog Medal",
+      "price": "EGP 45",
+      "image": "assets/images/dog_medal.png",
+      "sellerImage": "assets/images/yarana.png"
+    },
+    {
+      "id": 3,
+      "name": "Leather Bracelet",
+      "price": "EGP 80",
+      "image": "assets/images/leather_braclet.jpg",
+      "sellerImage": "assets/images/help.jpg"
+    }
+  ]
+}
