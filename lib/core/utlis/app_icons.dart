@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:quick_cart/core/utlis/app_colors.dart';
 
 class AppIcons {
@@ -73,12 +72,6 @@ class AppIcons {
   static Widget settings = Icon(
     Icons.settings,
     size: 30,
-    color: AppColors.primary,
-  );
-  static Widget location = SvgPicture.asset(
-    'assets/icons/location.svg',
-    width: 24,
-    height: 24,
     color: AppColors.primary,
   );
   static Widget search = Icon(

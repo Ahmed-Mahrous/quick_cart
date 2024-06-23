@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_cart/core/utlis/app_icons.dart';
 import 'package:quick_cart/core/utlis/media_query_values.dart';

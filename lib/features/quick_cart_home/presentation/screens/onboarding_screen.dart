@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quick_cart/core/utlis/app_colors.dart';
-import 'package:quick_cart/features/quick_cart_home/presentation/screens/create_account_screen.dart';
+import 'package:quick_cart/features/quick_cart_home/presentation/screens/auth_gate.dart';
 import 'package:quick_cart/features/quick_cart_home/presentation/widgets/animated_dot.dart';
 import 'package:quick_cart/features/quick_cart_home/presentation/widgets/onboarding_content.dart';
 
@@ -16,6 +15,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Column(
           children: [
@@ -56,13 +56,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             // Get started Button
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                  backgroundColor: AppColors.primary,
+                  //backgroundColor: AppColors.primary,
                   foregroundColor: Colors.white,
                   textStyle: const TextStyle(
                       fontSize: 16, fontWeight: FontWeight.w400)),
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => CreateAccountScreen()));
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => const AuthGate()));
               },
               child: Text(
                 "Get Started".toUpperCase(),

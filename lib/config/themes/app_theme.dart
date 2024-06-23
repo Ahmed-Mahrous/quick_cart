@@ -4,6 +4,14 @@ import '../../core/utlis/app_strings.dart';
 
 ThemeData appTheme() {
   return ThemeData(
+      outlinedButtonTheme: OutlinedButtonThemeData(
+          style: OutlinedButton.styleFrom(
+              textStyle:
+                  const TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
+              backgroundColor: AppColors.primary,
+              foregroundColor: Colors.white)),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(backgroundColor: AppColors.primary)),
       appBarTheme: const AppBarTheme(
           backgroundColor: Colors.white, scrolledUnderElevation: 0),
       scaffoldBackgroundColor: Colors.white,
