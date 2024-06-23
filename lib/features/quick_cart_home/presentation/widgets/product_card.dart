@@ -42,11 +42,7 @@ class ProductCard extends StatelessWidget {
                     alignment: Alignment.topRight,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: CircleAvatar(
-                        radius: 16,
-                        backgroundColor: AppColors.ScaffoldBackground,
-                        child: Center(child: AppIcons.unseletedFavorites),
-                      ),
+                      child: AppIcons.favorites,
                     ),
                   ),
                 ],
@@ -66,26 +62,7 @@ class ProductCard extends StatelessWidget {
                           fontWeight: FontWeight.w700,
                           fontSize: 18)),
                   const Spacer(),
-                  ClipOval(
-                    child: SizedBox.fromSize(
-                      size: const Size.fromRadius(14), // Image radius
-                      child: Image.asset(sellerImage, fit: BoxFit.cover),
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 8,
-                  ),
-                  CircleAvatar(
-                    radius: 14,
-                    backgroundColor: AppColors.primary,
-                    child: const Center(
-                      child: Icon(
-                        Icons.add,
-                        color: Colors.white,
-                        size: 18,
-                      ),
-                    ),
-                  ),
+                  AppIcons.mycart,
                 ],
               ),
             ],

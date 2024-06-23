@@ -45,8 +45,8 @@ class AppIcons {
     Icons.shopping_cart_outlined,
     size: 30,
   );
-  static Widget unselectedProfile = const Icon(
-    Icons.person_outline,
+  static Widget unselectedSettings = const Icon(
+    Icons.settings_outlined,
     size: 30,
   );
   static Widget mycart = Icon(
@@ -70,8 +70,8 @@ class AppIcons {
     color: AppColors.primary,
   );
 
-  static Widget profile = Icon(
-    Icons.person,
+  static Widget settings = Icon(
+    Icons.settings,
     size: 30,
     color: AppColors.primary,
   );
@@ -98,6 +98,12 @@ class AppIcons {
   );
   static Widget quickCart = Image.asset(
     'assets/icons/quickcart.png',
+    height: 40,
+    width: 40,
+  );
+  static Widget qoogle = Image.asset(
+    'assets/icons/google.webp',
+    color: Colors.white,
     height: 40,
     width: 40,
   );

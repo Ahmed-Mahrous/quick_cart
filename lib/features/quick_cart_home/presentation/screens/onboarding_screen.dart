@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quick_cart/core/utlis/app_colors.dart';
-import 'package:quick_cart/features/quick_cart_home/presentation/screens/home_screen.dart';
+import 'package:quick_cart/features/quick_cart_home/presentation/screens/create_account_screen.dart';
 import 'package:quick_cart/features/quick_cart_home/presentation/widgets/animated_dot.dart';
 import 'package:quick_cart/features/quick_cart_home/presentation/widgets/onboarding_content.dart';
 
@@ -58,11 +58,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               style: ElevatedButton.styleFrom(
                   backgroundColor: AppColors.primary,
                   foregroundColor: Colors.white,
-                  textStyle:
-                      TextStyle(fontSize: 16, fontWeight: FontWeight.w400)),
+                  textStyle: const TextStyle(
+                      fontSize: 16, fontWeight: FontWeight.w400)),
               onPressed: () {
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => HomeScreen()));
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => CreateAccountScreen()));
               },
               child: Text(
                 "Get Started".toUpperCase(),

@@ -31,9 +31,9 @@ class BottomNavBar extends StatelessWidget {
                 label: 'My Cart',
                 activeIcon: AppIcons.mycart),
             BottomNavigationBarItem(
-                icon: AppIcons.unselectedProfile,
-                label: 'Profile',
-                activeIcon: AppIcons.profile),
+                icon: AppIcons.unselectedSettings,
+                label: 'Settings',
+                activeIcon: AppIcons.settings),
           ],
         );
       },

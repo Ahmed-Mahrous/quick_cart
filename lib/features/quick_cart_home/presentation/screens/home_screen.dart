@@ -48,7 +48,7 @@ class HomeScreen extends StatelessWidget {
                   case 2:
                     return const Center(child: Text('My Cart'));
                   case 3:
-                    return const Center(child: Text('Profile'));
+                    return const Center(child: Text('Settings'));
                   default:
                     return const HomeView();
                 }
