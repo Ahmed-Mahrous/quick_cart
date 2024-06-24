@@ -4,11 +4,10 @@ import 'package:quick_cart/core/utlis/app_colors.dart';
 import 'package:quick_cart/core/utlis/media_query_values.dart';
 import 'package:quick_cart/features/quick_cart_home/data/models/product_model.dart';
 import 'package:quick_cart/features/quick_cart_home/presentation/cubit/cart_cubit.dart';
-import 'package:quick_cart/features/quick_cart_home/presentation/cubit/favorites_cubit.dart';
 
-class FavoriteCard extends StatelessWidget {
+class CartCard extends StatelessWidget {
   final Product product;
-  const FavoriteCard({
+  const CartCard({
     super.key,
     required this.product,
   });
@@ -37,6 +36,7 @@ class FavoriteCard extends StatelessWidget {
           ),
           Expanded(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
@@ -51,8 +51,8 @@ class FavoriteCard extends StatelessWidget {
                     IconButton(
                         onPressed: () {
                           context
-                              .read<FavoritesCubit>()
-                              .removeFavoritesProduct(product.id!);
+                              .read<CartCubit>()
+                              .removeCartProduct(product.id!);
                           ScaffoldMessenger.of(context)
                               .showSnackBar(const SnackBar(
                                   padding: EdgeInsets.all(5),
@@ -75,40 +75,11 @@ class FavoriteCard extends StatelessWidget {
                   ),
                 ),
                 Expanded(
-                  child: Row(
-                    children: [
-                      Text('${product.price}',
-                          style: TextStyle(
-                              color: AppColors.mainTextColor,
-                              fontWeight: FontWeight.w700,
-                              fontSize: 18)),
-                      const Spacer(),
-                      IconButton(
-                          onPressed: () {
-                            final newProduct = Product(
-                              id: product.id,
-                              name: product.name,
-                              price: product.price,
-                              image: product.image,
-                              sellerImage: product.sellerImage,
-                              description: product.description,
-                            );
-                            context
-                                .read<CartCubit>()
-                                .addCartProduct(newProduct);
-                            ScaffoldMessenger.of(context)
-                                .showSnackBar(const SnackBar(
-                                    padding: EdgeInsets.all(5),
-                                    behavior: SnackBarBehavior.floating,
-                                    duration: Duration(seconds: 2),
-                                    backgroundColor: Colors.grey,
-                                    content: Center(
-                                      child: Text('Product added to your cart'),
-                                    )));
-                          },
-                          icon: const Icon(Icons.shopping_cart))
-                    ],
-                  ),
+                  child: Text('${product.price}',
+                      style: TextStyle(
+                          color: AppColors.mainTextColor,
+                          fontWeight: FontWeight.w700,
+                          fontSize: 18)),
                 ),
               ],
             ),

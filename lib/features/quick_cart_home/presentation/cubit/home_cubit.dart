@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/services.dart';
 import 'package:quick_cart/features/quick_cart_home/data/models/product_model.dart';
-import 'package:quick_cart/features/quick_cart_home/presentation/cubit/home_cubit_states.dart';
+import 'package:quick_cart/features/quick_cart_home/presentation/cubit/home_states.dart';
 
 class HomeCubit extends Cubit<HomeCubitStates> {
   HomeCubit() : super(InitialState());

@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_cart/core/utlis/app_icons.dart';
 import 'package:quick_cart/core/utlis/media_query_values.dart';
-import 'package:quick_cart/features/quick_cart_home/data/models/product_model.dart';
-import 'package:quick_cart/features/quick_cart_home/presentation/cubit/home_cubit_states.dart';
-import 'package:quick_cart/features/quick_cart_home/presentation/cubit/product_cubit.dart';
+import 'package:quick_cart/features/quick_cart_home/presentation/cubit/cart_cubit.dart';
+import 'package:quick_cart/features/quick_cart_home/presentation/cubit/home_states.dart';
+import 'package:quick_cart/features/quick_cart_home/presentation/cubit/favorites_cubit.dart';
+import 'package:quick_cart/features/quick_cart_home/presentation/screens/cart_view.dart';
 import 'package:quick_cart/features/quick_cart_home/presentation/screens/favorites_view.dart';
 import 'package:quick_cart/features/quick_cart_home/presentation/widgets/bottom_nav_bar.dart';
 import '../cubit/home_cubit.dart';
@@ -25,7 +26,9 @@ class _HomeScreenState extends State<HomeScreen> {
         BlocProvider(
           create: (context) => HomeCubit()..fetchProducts(),
         ),
-        BlocProvider(create: (context) => ProductCubit()..loadProducts())
+        BlocProvider(
+            create: (context) => FavoritesCubit()..loadFavoritesProducts()),
+        BlocProvider(create: (context) => CartCubit()..loadCartProducts())
       ],
       child: Scaffold(
         appBar: AppBar(
@@ -57,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   case 1:
                     return const FavoritesView();
                   case 2:
-                    return const Center(child: Text('My Cart'));
+                    return const CartView();
                   case 3:
                     return const Center(child: Text('Settings'));
                   default:

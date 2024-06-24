@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_cart/core/utlis/app_colors.dart';
-import 'package:quick_cart/features/quick_cart_home/presentation/cubit/favorites_cubit.dart';
+import 'package:quick_cart/features/quick_cart_home/presentation/cubit/cart_cubit.dart';
+import 'package:quick_cart/features/quick_cart_home/presentation/cubit/cart_states.dart';
 import 'package:quick_cart/features/quick_cart_home/presentation/cubit/favorites_states.dart';
-import 'package:quick_cart/features/quick_cart_home/presentation/widgets/favorite_card.dart';
+import 'package:quick_cart/features/quick_cart_home/presentation/widgets/cart_card.dart';
 
-class FavoritesView extends StatefulWidget {
-  const FavoritesView({super.key});
+class CartView extends StatefulWidget {
+  const CartView({super.key});
 
   @override
-  State<FavoritesView> createState() => _FavoritesViewState();
+  State<CartView> createState() => _CartViewState();
 }
 
-class _FavoritesViewState extends State<FavoritesView> {
+class _CartViewState extends State<CartView> {
   @override
   void initState() {
     super.initState();
@@ -21,9 +22,9 @@ class _FavoritesViewState extends State<FavoritesView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(body: SafeArea(
-      child: BlocBuilder<FavoritesCubit, FavoritesState>(
+      child: BlocBuilder<CartCubit, CartProductState>(
         builder: (context, state) {
-          if (state is FavoriteItemLoaded) {
+          if (state is CartItemLoaded) {
             if (state.products.isEmpty) {
               return const Center(child: Text('No products yet'));
             } else {
@@ -34,7 +35,7 @@ class _FavoritesViewState extends State<FavoritesView> {
                   itemBuilder: (BuildContext context, int index) {
                     return Column(
                       children: [
-                        FavoriteCard(
+                        CartCard(
                           product: state.products.elementAt(index),
                         ),
                         const SizedBox(

@@ -1,11 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_cart/features/quick_cart_home/data/models/product_model.dart';
-import 'package:quick_cart/features/quick_cart_home/presentation/cubit/home_cubit.dart';
-import 'package:quick_cart/features/quick_cart_home/presentation/cubit/product_cubit.dart';
-import 'package:quick_cart/features/quick_cart_home/presentation/cubit/product_states.dart';
+import 'package:quick_cart/features/quick_cart_home/presentation/cubit/cart_cubit.dart';
+import 'package:quick_cart/features/quick_cart_home/presentation/cubit/favorites_cubit.dart';
+import 'package:quick_cart/features/quick_cart_home/presentation/widgets/alert_widget.dart';
 import '../../../../core/utlis/app_colors.dart';
 import '../../../../core/utlis/app_icons.dart';
 
@@ -68,7 +66,18 @@ class _ProductCardState extends State<ProductCard> {
                             sellerImage: widget.sellerImage,
                             description: widget.description,
                           );
-                          context.read<ProductCubit>().addProduct(newProduct);
+                          context
+                              .read<FavoritesCubit>()
+                              .addFavoritesProduct(newProduct);
+                          ScaffoldMessenger.of(context)
+                              .showSnackBar(const SnackBar(
+                                  padding: EdgeInsets.all(5),
+                                  behavior: SnackBarBehavior.floating,
+                                  duration: Duration(seconds: 2),
+                                  backgroundColor: Colors.grey,
+                                  content: Center(
+                                    child: Text('Product added to favorites'),
+                                  )));
                         },
                       ),
                     ),
@@ -92,7 +101,26 @@ class _ProductCardState extends State<ProductCard> {
                             fontSize: 18)),
                     const Spacer(),
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        final newProduct = Product(
+                          id: widget.id,
+                          name: widget.name,
+                          price: widget.price,
+                          image: widget.image,
+                          sellerImage: widget.sellerImage,
+                          description: widget.description,
+                        );
+                        context.read<CartCubit>().addCartProduct(newProduct);
+                        ScaffoldMessenger.of(context)
+                            .showSnackBar(const SnackBar(
+                                padding: EdgeInsets.all(5),
+                                behavior: SnackBarBehavior.floating,
+                                duration: Duration(seconds: 2),
+                                backgroundColor: Colors.grey,
+                                content: Center(
+                                  child: Text('Product added to your cart'),
+                                )));
+                      },
                       icon: AppIcons.mycart,
                     )
                   ],

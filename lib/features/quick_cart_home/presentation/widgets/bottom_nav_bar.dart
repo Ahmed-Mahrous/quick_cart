@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:quick_cart/features/quick_cart_home/presentation/cubit/home_cubit_states.dart';
+import 'package:quick_cart/features/quick_cart_home/presentation/cubit/home_states.dart';
 import 'package:quick_cart/features/quick_cart_home/presentation/cubit/home_cubit.dart';
 import '../../../../core/utlis/app_icons.dart';
 

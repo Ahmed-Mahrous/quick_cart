@@ -28,7 +28,7 @@
   ],
   "newArrival": [
     {
-      "id": 1,
+      "id": 4,
       "name": "Printed Bag",
       "price": "EGP 180",
       "image": "assets/images/printed_bag.jpg",
@@ -36,7 +36,7 @@
       "description": "Introducing our premium product, designed with the highest standards of quality and innovation. This exceptional item offers unparalleled performance and reliability, making it an essential addition to your daily life. Crafted with precision and using top-grade materials, it ensures durability and long-lasting satisfaction. Whether for personal use or as a thoughtful gift, this product stands out for its sleek design and user-friendly features. "
     },
     {
-      "id": 2,
+      "id": 5,
       "name": "NoteBook",
       "price": "EGP 80",
       "image": "assets/images/notebook.png",
@@ -44,7 +44,7 @@
       "description": "Introducing our premium product, designed with the highest standards of quality and innovation. This exceptional item offers unparalleled performance and reliability, making it an essential addition to your daily life. Crafted with precision and using top-grade materials, it ensures durability and long-lasting satisfaction. Whether for personal use or as a thoughtful gift, this product stands out for its sleek design and user-friendly features. "
     },
     {
-      "id": 3,
+      "id": 6,
       "name": "Woolen Scarf",
       "price": "EGP 95 ",
       "image": "assets/images/woolen_scarf.jpg",
@@ -55,7 +55,7 @@
   ],
   "recommendedForYou": [
     {
-      "id": 1,
+      "id": 7,
       "name": "Leather Jacket",
       "price": "EGP 340",
       "image": "assets/images/leather_jacket.jpg",
@@ -63,7 +63,7 @@
       "description": "Introducing our premium product, designed with the highest standards of quality and innovation. This exceptional item offers unparalleled performance and reliability, making it an essential addition to your daily life. Crafted with precision and using top-grade materials, it ensures durability and long-lasting satisfaction. Whether for personal use or as a thoughtful gift, this product stands out for its sleek design and user-friendly features. "
     },
     {
-      "id": 2,
+      "id": 8,
       "name": "Dog Medal",
       "price": "EGP 45",
       "image": "assets/images/dog_medal.png",
@@ -71,7 +71,7 @@
       "description": "Introducing our premium product, designed with the highest standards of quality and innovation. This exceptional item offers unparalleled performance and reliability, making it an essential addition to your daily life. Crafted with precision and using top-grade materials, it ensures durability and long-lasting satisfaction. Whether for personal use or as a thoughtful gift, this product stands out for its sleek design and user-friendly features. "
     },
     {
-      "id": 3,
+      "id": 9,
       "name": "Leather Bracelet",
       "price": "EGP 80",
       "image": "assets/images/leather_braclet.jpg",
