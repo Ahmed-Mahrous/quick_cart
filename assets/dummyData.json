@@ -5,21 +5,24 @@
       "name": "Stitch Keychain",
       "price": "EGP 55",
       "image": "assets/images/stitch.jpg",
-      "sellerImage": "assets/images/yarana.png"
+      "sellerImage": "assets/images/yarana.png",
+      "description": "Introducing our premium product, designed with the highest standards of quality and innovation. This exceptional item offers unparalleled performance and reliability, making it an essential addition to your daily life. Crafted with precision and using top-grade materials, it ensures durability and long-lasting satisfaction. Whether for personal use or as a thoughtful gift, this product stands out for its sleek design and user-friendly features. "
     },
     {
       "id": 2,
       "name": "Baby Girl Dress",
       "price": "EGP 230",
       "image": "assets/images/baby_girl.jpg",
-      "sellerImage": "assets/images/help.jpg"
+      "sellerImage": "assets/images/help.jpg",
+      "description": "Introducing our premium product, designed with the highest standards of quality and innovation. This exceptional item offers unparalleled performance and reliability, making it an essential addition to your daily life. Crafted with precision and using top-grade materials, it ensures durability and long-lasting satisfaction. Whether for personal use or as a thoughtful gift, this product stands out for its sleek design and user-friendly features. "
     },
     {
       "id": 3,
       "name": "Infant Hair Clips",
       "price": "EGP 90",
       "image": "assets/images/infant_hair.jpg",
-      "sellerImage": "assets/images/seller.jpg"
+      "sellerImage": "assets/images/seller.jpg",
+      "description": "Introducing our premium product, designed with the highest standards of quality and innovation. This exceptional item offers unparalleled performance and reliability, making it an essential addition to your daily life. Crafted with precision and using top-grade materials, it ensures durability and long-lasting satisfaction. Whether for personal use or as a thoughtful gift, this product stands out for its sleek design and user-friendly features. "
     }
 
   ],
@@ -29,21 +32,24 @@
       "name": "Printed Bag",
       "price": "EGP 180",
       "image": "assets/images/printed_bag.jpg",
-      "sellerImage": "assets/images/seller.jpg"
+      "sellerImage": "assets/images/seller.jpg",
+      "description": "Introducing our premium product, designed with the highest standards of quality and innovation. This exceptional item offers unparalleled performance and reliability, making it an essential addition to your daily life. Crafted with precision and using top-grade materials, it ensures durability and long-lasting satisfaction. Whether for personal use or as a thoughtful gift, this product stands out for its sleek design and user-friendly features. "
     },
     {
       "id": 2,
       "name": "NoteBook",
       "price": "EGP 80",
       "image": "assets/images/notebook.png",
-      "sellerImage": "assets/images/yarana.png"
+      "sellerImage": "assets/images/yarana.png",
+      "description": "Introducing our premium product, designed with the highest standards of quality and innovation. This exceptional item offers unparalleled performance and reliability, making it an essential addition to your daily life. Crafted with precision and using top-grade materials, it ensures durability and long-lasting satisfaction. Whether for personal use or as a thoughtful gift, this product stands out for its sleek design and user-friendly features. "
     },
     {
       "id": 3,
       "name": "Woolen Scarf",
       "price": "EGP 95 ",
       "image": "assets/images/woolen_scarf.jpg",
-      "sellerImage": "assets/images/help.jpg"
+      "sellerImage": "assets/images/help.jpg",
+      "description": "Introducing our premium product, designed with the highest standards of quality and innovation. This exceptional item offers unparalleled performance and reliability, making it an essential addition to your daily life. Crafted with precision and using top-grade materials, it ensures durability and long-lasting satisfaction. Whether for personal use or as a thoughtful gift, this product stands out for its sleek design and user-friendly features. "
     }
 
   ],
@@ -53,21 +59,24 @@
       "name": "Leather Jacket",
       "price": "EGP 340",
       "image": "assets/images/leather_jacket.jpg",
-      "sellerImage": "assets/images/seller.jpg"
+      "sellerImage": "assets/images/seller.jpg",
+      "description": "Introducing our premium product, designed with the highest standards of quality and innovation. This exceptional item offers unparalleled performance and reliability, making it an essential addition to your daily life. Crafted with precision and using top-grade materials, it ensures durability and long-lasting satisfaction. Whether for personal use or as a thoughtful gift, this product stands out for its sleek design and user-friendly features. "
     },
     {
       "id": 2,
       "name": "Dog Medal",
       "price": "EGP 45",
       "image": "assets/images/dog_medal.png",
-      "sellerImage": "assets/images/yarana.png"
+      "sellerImage": "assets/images/yarana.png",
+      "description": "Introducing our premium product, designed with the highest standards of quality and innovation. This exceptional item offers unparalleled performance and reliability, making it an essential addition to your daily life. Crafted with precision and using top-grade materials, it ensures durability and long-lasting satisfaction. Whether for personal use or as a thoughtful gift, this product stands out for its sleek design and user-friendly features. "
     },
     {
       "id": 3,
       "name": "Leather Bracelet",
       "price": "EGP 80",
       "image": "assets/images/leather_braclet.jpg",
-      "sellerImage": "assets/images/help.jpg"
+      "sellerImage": "assets/images/help.jpg",
+      "description": "Introducing our premium product, designed with the highest standards of quality and innovation. This exceptional item offers unparalleled performance and reliability, making it an essential addition to your daily life. Crafted with precision and using top-grade materials, it ensures durability and long-lasting satisfaction. Whether for personal use or as a thoughtful gift, this product stands out for its sleek design and user-friendly features. "
     }
   ]
 }

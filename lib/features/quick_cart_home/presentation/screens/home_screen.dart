@@ -2,18 +2,31 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_cart/core/utlis/app_icons.dart';
 import 'package:quick_cart/core/utlis/media_query_values.dart';
+import 'package:quick_cart/features/quick_cart_home/data/models/product_model.dart';
 import 'package:quick_cart/features/quick_cart_home/presentation/cubit/home_cubit_states.dart';
+import 'package:quick_cart/features/quick_cart_home/presentation/cubit/product_cubit.dart';
+import 'package:quick_cart/features/quick_cart_home/presentation/screens/favorites_view.dart';
 import 'package:quick_cart/features/quick_cart_home/presentation/widgets/bottom_nav_bar.dart';
 import '../cubit/home_cubit.dart';
 import 'home_view.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => HomeCubit()..fetchProducts(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => HomeCubit()..fetchProducts(),
+        ),
+        BlocProvider(create: (context) => ProductCubit()..loadProducts())
+      ],
       child: Scaffold(
         appBar: AppBar(
           leadingWidth: context.width,
@@ -42,7 +55,7 @@ class HomeScreen extends StatelessWidget {
                   case 0:
                     return const HomeView();
                   case 1:
-                    return const Center(child: Text('Favorites'));
+                    return const FavoritesView();
                   case 2:
                     return const Center(child: Text('My Cart'));
                   case 3:

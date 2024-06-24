@@ -40,6 +40,7 @@ Widget buildCategory(String title, List<Product> products) {
           itemBuilder: (context, index) {
             final product = products[index];
             return ProductCard(
+                description: product.description!,
                 id: product.id!,
                 name: product.name!,
                 price: product.price!,

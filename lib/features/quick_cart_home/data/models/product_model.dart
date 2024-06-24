@@ -4,8 +4,10 @@ class Product {
   final String? price;
   final String? image;
   final String? sellerImage;
+  final String? description;
 
   Product({
+    required this.description,
     required this.id,
     required this.name,
     required this.price,
@@ -15,12 +17,12 @@ class Product {
 
   factory Product.fromJson(Map<String, dynamic> json) {
     return Product(
-      id: json['id'],
-      name: json['name'],
-      price: json['price'],
-      image: json['image'],
-      sellerImage: json['sellerImage'],
-    );
+        id: json['id'],
+        name: json['name'],
+        price: json['price'],
+        image: json['image'],
+        sellerImage: json['sellerImage'],
+        description: json['description']);
   }
 }
 

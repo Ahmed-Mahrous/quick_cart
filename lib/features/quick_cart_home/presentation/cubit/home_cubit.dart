@@ -9,6 +9,8 @@ class HomeCubit extends Cubit<HomeCubitStates> {
   int currentIndex = 0;
   int carouselCurrentIndex = 0;
   ProductCategory? productCategory;
+  List<Product>? favoritesList;
+  List<Product>? cartList;
   void setTab(int index) {
     currentIndex = index;
     emit(NavBarViewState());
@@ -36,5 +38,10 @@ class HomeCubit extends Cubit<HomeCubitStates> {
     } catch (e) {
       emit(ProductError(e.toString()));
     }
+  }
+
+  void addProduct(Product? product) {
+    favoritesList!.add(product!);
+    emit(ProductAdded(favoritesList!));
   }
 }
