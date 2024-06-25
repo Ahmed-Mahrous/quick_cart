@@ -6,6 +6,7 @@ import 'package:quick_cart/features/quick_cart_home/presentation/cubit/home_stat
 
 class HomeCubit extends Cubit<HomeCubitStates> {
   HomeCubit() : super(InitialState());
+  int dropdownValue = 1;
   int currentIndex = 0;
   int carouselCurrentIndex = 0;
   ProductCategory? productCategory;
@@ -38,6 +39,11 @@ class HomeCubit extends Cubit<HomeCubitStates> {
     } catch (e) {
       emit(ProductError(e.toString()));
     }
+  }
+
+  void dropdownChange(value) {
+    dropdownValue = value;
+    emit(dropdownChanged());
   }
 
   void addProduct(Product? product) {

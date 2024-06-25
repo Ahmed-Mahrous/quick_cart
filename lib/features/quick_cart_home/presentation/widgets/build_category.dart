@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quick_cart/core/utlis/app_colors.dart';
-import 'package:quick_cart/features/quick_cart_home/presentation/widgets/product_card.dart';
+import 'package:quick_cart/features/quick_cart_home/presentation/widgets/home_product_card.dart';
 import '../../../../core/utlis/app_icons.dart';
 import '../../data/models/product_model.dart';
 
@@ -39,7 +39,7 @@ Widget buildCategory(String title, List<Product> products) {
           itemCount: products.length,
           itemBuilder: (context, index) {
             final product = products[index];
-            return ProductCard(
+            return HomeProductCard(
                 description: product.description!,
                 id: product.id!,
                 name: product.name!,

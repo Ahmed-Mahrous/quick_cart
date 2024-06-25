@@ -1,13 +1,14 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_cart/features/quick_cart_home/data/models/product_model.dart';
 import 'package:quick_cart/features/quick_cart_home/presentation/cubit/cart_cubit.dart';
 import 'package:quick_cart/features/quick_cart_home/presentation/cubit/favorites_cubit.dart';
-import 'package:quick_cart/features/quick_cart_home/presentation/widgets/alert_widget.dart';
+import 'package:quick_cart/features/quick_cart_home/presentation/screens/product_screen.dart';
 import '../../../../core/utlis/app_colors.dart';
 import '../../../../core/utlis/app_icons.dart';
 
-class ProductCard extends StatefulWidget {
+class HomeProductCard extends StatefulWidget {
   final int id;
   final String name;
   final String price;
@@ -15,7 +16,7 @@ class ProductCard extends StatefulWidget {
   final String sellerImage;
   final String description;
 
-  const ProductCard(
+  const HomeProductCard(
       {super.key,
       required this.id,
       required this.name,
@@ -25,10 +26,10 @@ class ProductCard extends StatefulWidget {
       required this.description});
 
   @override
-  State<ProductCard> createState() => _ProductCardState();
+  State<HomeProductCard> createState() => _HomeProductCardState();
 }
 
-class _ProductCardState extends State<ProductCard> {
+class _HomeProductCardState extends State<HomeProductCard> {
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -40,46 +41,56 @@ class _ProductCardState extends State<ProductCard> {
             children: [
               Stack(
                 children: [
-                  Container(
-                    width: 135,
-                    height: 127,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      image: DecorationImage(
-                        image: AssetImage(widget.image),
-                        fit: BoxFit.cover,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => ProductScreen(
+                                id: widget.id,
+                                name: widget.name,
+                                image: widget.image,
+                                sellerImage: widget.sellerImage,
+                                description: widget.description,
+                                price: widget.price,
+                              )));
+                    },
+                    child: Container(
+                      width: 135,
+                      height: 127,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        image: DecorationImage(
+                          image: AssetImage(widget.image),
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                   ),
                   Align(
                     alignment: Alignment.topRight,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: IconButton(
-                        icon: AppIcons.favorites,
-                        onPressed: () {
-                          final newProduct = Product(
-                            id: widget.id,
-                            name: widget.name,
-                            price: widget.price,
-                            image: widget.image,
-                            sellerImage: widget.sellerImage,
-                            description: widget.description,
-                          );
-                          context
-                              .read<FavoritesCubit>()
-                              .addFavoritesProduct(newProduct);
-                          ScaffoldMessenger.of(context)
-                              .showSnackBar(const SnackBar(
-                                  padding: EdgeInsets.all(5),
-                                  behavior: SnackBarBehavior.floating,
-                                  duration: Duration(seconds: 2),
-                                  backgroundColor: Colors.grey,
-                                  content: Center(
-                                    child: Text('Product added to favorites'),
-                                  )));
-                        },
-                      ),
+                    child: IconButton(
+                      icon: AppIcons.favorites,
+                      onPressed: () {
+                        final newProduct = Product(
+                          id: widget.id,
+                          name: widget.name,
+                          price: widget.price,
+                          image: widget.image,
+                          sellerImage: widget.sellerImage,
+                          description: widget.description,
+                        );
+                        context
+                            .read<FavoritesCubit>()
+                            .addFavoritesProduct(newProduct);
+                        ScaffoldMessenger.of(context)
+                            .showSnackBar(const SnackBar(
+                                padding: EdgeInsets.all(5),
+                                behavior: SnackBarBehavior.floating,
+                                duration: Duration(seconds: 2),
+                                backgroundColor: Colors.grey,
+                                content: Center(
+                                  child: Text('Product added to favorites'),
+                                )));
+                      },
                     ),
                   ),
                 ],

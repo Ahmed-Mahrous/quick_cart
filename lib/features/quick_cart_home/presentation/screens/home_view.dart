@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_cart/features/quick_cart_home/presentation/cubit/home_states.dart';
 import 'package:quick_cart/features/quick_cart_home/presentation/widgets/carousel_slider_withdots.dart';
-import 'package:quick_cart/features/quick_cart_home/presentation/widgets/categories.dart';
 import 'package:quick_cart/features/quick_cart_home/presentation/widgets/search.dart';
 import '../cubit/home_cubit.dart';
 import '../widgets/build_category.dart';
@@ -40,12 +39,6 @@ class _HomeViewState extends State<HomeView> {
                 height: 20,
               ),
               CarouselSliderWithDots(),
-              const Text('Categories',
-                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20)),
-              const SizedBox(
-                height: 20,
-              ),
-              const Categories(),
               const SizedBox(
                 height: 20,
               ),

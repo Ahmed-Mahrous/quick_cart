@@ -22,3 +22,5 @@ class ProductError extends HomeCubitStates {
 
   ProductError(this.message);
 }
+
+class dropdownChanged extends HomeCubitStates {}
