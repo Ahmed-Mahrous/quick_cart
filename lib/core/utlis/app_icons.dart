@@ -7,8 +7,8 @@ class AppIcons {
     width: 34,
     height: 34,
   );
-  static Widget games = Image.asset(
-    'assets/icons/Dice.png',
+  static Widget women = Image.asset(
+    'assets/icons/woman-clothes.png',
     width: 34,
     height: 34,
   );
@@ -17,13 +17,13 @@ class AppIcons {
     width: 34,
     height: 34,
   );
-  static Widget artifacts = const Icon(
-    Icons.tag_faces_rounded,
-    color: Colors.white,
-    size: 34,
+  static Widget electronics = Image.asset(
+    'assets/icons/plug.png',
+    width: 34,
+    height: 34,
   );
-  static Widget accessories = Image.asset(
-    'assets/icons/Glasses.png',
+  static Widget jewelery = Image.asset(
+    'assets/icons/diamond.png',
     width: 34,
     height: 34,
   );

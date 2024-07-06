@@ -11,10 +11,8 @@ class FavoritesCubit extends Cubit<FavoritesState> {
       final updatedProducts = Set<Product>.from(currentState.products)
         ..add(product);
       emit(FavoriteItemLoaded(updatedProducts));
-      print('1');
     } else {
       emit(FavoriteItemLoaded({product}));
-      print('2');
     }
   }
 
@@ -29,6 +27,6 @@ class FavoritesCubit extends Cubit<FavoritesState> {
 
   void loadFavoritesProducts() {
     emit(FavoriteItemLoaded({}));
-    print('3'); // Emit an empty list initially
+    // Emit an empty list initially
   }
 }

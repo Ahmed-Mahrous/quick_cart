@@ -90,7 +90,6 @@ class FavoriteCard extends StatelessWidget {
                               name: product.name,
                               price: product.price,
                               image: product.image,
-                              sellerImage: product.sellerImage,
                               description: product.description,
                             );
                             context

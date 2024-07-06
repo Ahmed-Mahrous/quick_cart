@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:quick_cart/features/quick_cart_home/data/models/product_model.dart';
 import 'package:quick_cart/features/quick_cart_home/presentation/cubit/cart_states.dart';
-import 'package:quick_cart/features/quick_cart_home/presentation/cubit/favorites_states.dart';
 
 class CartCubit extends Cubit<CartProductState> {
   CartCubit() : super(CartProductInitial());
@@ -12,10 +11,8 @@ class CartCubit extends Cubit<CartProductState> {
       final updatedProducts = Set<Product>.from(currentState.products)
         ..add(product);
       emit(CartItemLoaded(updatedProducts));
-      print('1');
     } else {
       emit(CartItemLoaded({product}));
-      print('2');
     }
   }
 
@@ -30,6 +27,6 @@ class CartCubit extends Cubit<CartProductState> {
 
   void loadCartProducts() {
     emit(CartItemLoaded({}));
-    print('3'); // Emit an empty list initially
+    // Emit an empty list initially
   }
 }

@@ -1,6 +1,6 @@
 # quick_cart
 
-Flutter project.
+qFlutter project.
 
 ## Getting Started
 

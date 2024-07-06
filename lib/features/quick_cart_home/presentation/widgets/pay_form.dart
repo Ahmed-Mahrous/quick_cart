@@ -1,8 +1,4 @@
-import 'dart:ui';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:quick_cart/core/utlis/media_query_values.dart';
 
 class PayForm extends StatelessWidget {
@@ -65,9 +61,7 @@ class PayForm extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(
-          height: 10,
-        ),
+        const Spacer(),
         SizedBox(
           width: context.width,
           child: ElevatedButton(

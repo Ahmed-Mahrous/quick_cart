@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_cart/features/quick_cart_home/data/models/product_model.dart';
@@ -13,7 +12,6 @@ class HomeProductCard extends StatefulWidget {
   final String name;
   final String price;
   final String image;
-  final String sellerImage;
   final String description;
 
   const HomeProductCard(
@@ -22,7 +20,6 @@ class HomeProductCard extends StatefulWidget {
       required this.name,
       required this.price,
       required this.image,
-      required this.sellerImage,
       required this.description});
 
   @override
@@ -48,7 +45,6 @@ class _HomeProductCardState extends State<HomeProductCard> {
                                 id: widget.id,
                                 name: widget.name,
                                 image: widget.image,
-                                sellerImage: widget.sellerImage,
                                 description: widget.description,
                                 price: widget.price,
                               )));
@@ -75,7 +71,6 @@ class _HomeProductCardState extends State<HomeProductCard> {
                           name: widget.name,
                           price: widget.price,
                           image: widget.image,
-                          sellerImage: widget.sellerImage,
                           description: widget.description,
                         );
                         context
@@ -118,7 +113,6 @@ class _HomeProductCardState extends State<HomeProductCard> {
                           name: widget.name,
                           price: widget.price,
                           image: widget.image,
-                          sellerImage: widget.sellerImage,
                           description: widget.description,
                         );
                         context.read<CartCubit>().addCartProduct(newProduct);

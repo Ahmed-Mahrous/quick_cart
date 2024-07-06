@@ -33,7 +33,6 @@ class _DropDownButtonState extends State<DropDownButton> {
           onChanged: (int? value) {
             // This is called when the user selects an item.
             context.read<HomeCubit>().dropdownChange(value);
-            print(context.read<HomeCubit>().dropdownValue);
           },
           items: list.map<DropdownMenuItem<int>>((int value) {
             return DropdownMenuItem<int>(

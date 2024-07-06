@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quick_cart/core/utlis/app_colors.dart';
+import 'package:quick_cart/features/quick_cart_home/presentation/lang/lang.dart';
 import '../../../../core/utlis/app_icons.dart';
 
 class Search extends StatelessWidget {
@@ -13,7 +14,8 @@ class Search extends StatelessWidget {
         textAlignVertical: TextAlignVertical.center,
         decoration: InputDecoration(
           isCollapsed: true,
-          hintText: 'Search here...',
+          hintText:
+              AppLocalizations.of(context)?.translate('search here') ?? '',
           prefixIcon: AppIcons.search,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),

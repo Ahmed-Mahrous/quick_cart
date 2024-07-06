@@ -17,7 +17,7 @@ class LocationCubit extends Cubit<LocationState> {
     // Check if location services are enabled
     serviceEnabled = await Geolocator.isLocationServiceEnabled();
     if (!serviceEnabled) {
-      emit(LocationError('Location services are disabled.'));
+      emit(const LocationError('Location services are disabled.'));
       return;
     }
 
@@ -26,13 +26,13 @@ class LocationCubit extends Cubit<LocationState> {
     if (permission == LocationPermission.denied) {
       permission = await Geolocator.requestPermission();
       if (permission == LocationPermission.denied) {
-        emit(LocationError('Location permissions are denied'));
+        emit(const LocationError('Location permissions are denied'));
         return;
       }
     }
 
     if (permission == LocationPermission.deniedForever) {
-      emit(LocationError('Location permissions are permanently denied'));
+      emit(const LocationError('Location permissions are permanently denied'));
       return;
     }
 
@@ -50,7 +50,7 @@ class LocationCubit extends Cubit<LocationState> {
           '${place.street}, ${place.locality}, ${place.postalCode}, ${place.country}';
       emit(LocationLoaded(address));
     } catch (e) {
-      emit(LocationError('Failed to get the location'));
+      emit(const LocationError('Failed to get the location'));
     }
   }
 }

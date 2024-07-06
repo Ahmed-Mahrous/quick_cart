@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_cart/features/quick_cart_home/presentation/cubit/home_states.dart';
+import 'package:quick_cart/features/quick_cart_home/presentation/lang/lang.dart';
 import 'package:quick_cart/features/quick_cart_home/presentation/widgets/carousel_slider_withdots.dart';
+import 'package:quick_cart/features/quick_cart_home/presentation/widgets/categories.dart';
 import 'package:quick_cart/features/quick_cart_home/presentation/widgets/search.dart';
 import '../cubit/home_cubit.dart';
 import '../widgets/build_category.dart';
@@ -42,18 +44,30 @@ class _HomeViewState extends State<HomeView> {
               const SizedBox(
                 height: 20,
               ),
+              Text(AppLocalizations.of(context)?.translate('categories') ?? '',
+                  style: const TextStyle(
+                      fontWeight: FontWeight.w600, fontSize: 20)),
+              const SizedBox(
+                height: 10,
+              ),
+              const Categories(),
+              const SizedBox(
+                height: 20,
+              ),
               buildCategory(
-                  'Best Selling',
+                  AppLocalizations.of(context)?.translate('best selling') ?? '',
                   BlocProvider.of<HomeCubit>(context)
                       .productCategory!
                       .bestSelling!),
               buildCategory(
-                  'New Arrival',
+                  AppLocalizations.of(context)?.translate('new arrival') ?? '',
                   BlocProvider.of<HomeCubit>(context)
                       .productCategory!
                       .newArrival!),
               buildCategory(
-                  'Recommended For You',
+                  AppLocalizations.of(context)
+                          ?.translate('recommended for you') ??
+                      '',
                   BlocProvider.of<HomeCubit>(context)
                       .productCategory!
                       .recommendedForYou!)

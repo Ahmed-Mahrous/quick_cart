@@ -65,7 +65,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                           height: 50,
                           child: TextField(
                             controller: TextEditingController(
-                                text: 'Press icon for current location'),
+                                text: 'Current location is loading...'),
                             readOnly: true,
                             decoration: const InputDecoration(
                               border: OutlineInputBorder(),
@@ -128,7 +128,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               'Choose pay option',
               style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             GestureDetector(
@@ -143,7 +143,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                 alignment: Alignment.topRight,
                 children: [
                   Container(
-                    child: Center(
+                    child: const Center(
                       child: Text(
                         'Cash',
                         style: TextStyle(
@@ -159,15 +159,15 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                         borderRadius: BorderRadius.circular(5)),
                   ),
                   isCashClicked == true
-                      ? Padding(
-                          padding: const EdgeInsets.all(8.0),
+                      ? const Padding(
+                          padding: EdgeInsets.all(8.0),
                           child: Icon(Icons.check_circle),
                         )
                       : Container()
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 5,
             ),
             GestureDetector(
@@ -182,13 +182,6 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                 alignment: Alignment.topRight,
                 children: [
                   Container(
-                    child: Center(
-                      child: Text(
-                        'By card',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w500, fontSize: 16),
-                      ),
-                    ),
                     height: 50,
                     decoration: BoxDecoration(
                         border: Border.all(
@@ -196,10 +189,17 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                 ? Colors.grey
                                 : AppColors.primary),
                         borderRadius: BorderRadius.circular(5)),
+                    child: const Center(
+                      child: Text(
+                        'By card',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w500, fontSize: 16),
+                      ),
+                    ),
                   ),
                   isCardClicked == true
-                      ? Padding(
-                          padding: const EdgeInsets.all(8.0),
+                      ? const Padding(
+                          padding: EdgeInsets.all(8.0),
                           child: Icon(Icons.check_circle),
                         )
                       : Container()
@@ -213,7 +213,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               'Card info',
               style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             const Expanded(child: PayForm())

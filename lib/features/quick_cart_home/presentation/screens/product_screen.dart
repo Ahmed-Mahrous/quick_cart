@@ -6,6 +6,7 @@ import 'package:quick_cart/core/utlis/media_query_values.dart';
 import 'package:quick_cart/features/quick_cart_home/data/models/product_model.dart';
 import 'package:quick_cart/features/quick_cart_home/presentation/cubit/cart_cubit.dart';
 import 'package:quick_cart/features/quick_cart_home/presentation/cubit/favorites_cubit.dart';
+import 'package:quick_cart/features/quick_cart_home/presentation/lang/lang.dart';
 import 'package:quick_cart/features/quick_cart_home/presentation/screens/checkout_screen.dart';
 import 'package:quick_cart/features/quick_cart_home/presentation/widgets/dropdown_button.dart';
 
@@ -16,13 +17,11 @@ class ProductScreen extends StatelessWidget {
       required this.name,
       required this.price,
       required this.image,
-      required this.sellerImage,
       required this.description});
   final int id;
   final String name;
   final String price;
   final String image;
-  final String sellerImage;
   final String description;
   @override
   Widget build(BuildContext context) {
@@ -109,7 +108,6 @@ class ProductScreen extends StatelessWidget {
                           name: name,
                           price: price,
                           image: image,
-                          sellerImage: sellerImage,
                           description: description,
                         );
                         context
@@ -134,7 +132,9 @@ class ProductScreen extends StatelessWidget {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text('Quantity :',
+                    Text(
+                        AppLocalizations.of(context)?.translate('quantity') ??
+                            '',
                         style: TextStyle(
                             color: AppColors.mainTextColor,
                             fontWeight: FontWeight.w700,
@@ -148,16 +148,19 @@ class ProductScreen extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    Text('Description :',
+                    Text(
+                        AppLocalizations.of(context)
+                                ?.translate('description') ??
+                            '',
                         style: TextStyle(
                             color: AppColors.mainTextColor,
                             fontWeight: FontWeight.w400,
                             fontSize: 18)),
-                    Spacer(),
+                    const Spacer(),
                   ],
                 ),
                 Text(description,
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: Colors.grey,
                         fontWeight: FontWeight.w500,
                         fontSize: 14)),
@@ -173,7 +176,6 @@ class ProductScreen extends StatelessWidget {
                           name: name,
                           price: price,
                           image: image,
-                          sellerImage: sellerImage,
                           description: description,
                         );
                         context.read<CartCubit>().addCartProduct(newProduct);
@@ -187,9 +189,11 @@ class ProductScreen extends StatelessWidget {
                                   child: Text('Product added to your cart'),
                                 )));
                       },
-                      child: const Text(
-                        'add to cart',
-                        style: TextStyle(
+                      child: Text(
+                        AppLocalizations.of(context)
+                                ?.translate('add to cart') ??
+                            '',
+                        style: const TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w500,
                             fontSize: 16),
@@ -201,11 +205,12 @@ class ProductScreen extends StatelessWidget {
                   child: ElevatedButton(
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => CheckoutScreen()));
+                            builder: (context) => const CheckoutScreen()));
                       },
-                      child: const Text(
-                        'Order now',
-                        style: TextStyle(
+                      child: Text(
+                        AppLocalizations.of(context)?.translate('order now') ??
+                            '',
+                        style: const TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w500,
                             fontSize: 16),
